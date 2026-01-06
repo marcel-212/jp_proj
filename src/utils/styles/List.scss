@@ -1,0 +1,52 @@
+@use "../variables" as *;
+
+.list{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+
+    &-kanji{
+        padding-top: 2rem;
+        border-top: rgba(12, 78, 139, 0.4) 2px solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .switch{
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        border-radius: 12px;
+        border: 2px solid rgba(12, 78, 139, 0.4);
+        width: 200px;
+        font-size: 18px;
+
+        div {
+            width: 50%;
+            padding: 1rem 0;
+            text-align: center;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            background-color: rgba(12, 78, 139, 0.4);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        &.switch-active::before {
+            transform: translateX(-100%);
+        }
+    }
+}

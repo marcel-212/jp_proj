@@ -1,0 +1,44 @@
+@use "../variables" as *;
+
+.radio-button {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid rgba(12, 78, 139, 0.4);
+  font-size: 18px;
+  max-width: 720px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% / var(--count));
+    height: 100%;
+    background-color: rgba(12, 78, 139, 0.4);
+    transition: transform 0.25s ease-in-out;
+    transform: translateX(
+      calc(100% * var(--index))
+    );
+  }
+
+  > div {
+    width: calc(100% / var(--count));
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+
+    label {
+      padding: 1rem 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    input {
+      display: none;
+    }
+  }
+}
