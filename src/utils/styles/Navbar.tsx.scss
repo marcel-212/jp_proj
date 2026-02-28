@@ -1,0 +1,80 @@
+@use '../variables' as *;
+
+header{
+    z-index: 9999;
+
+    transition: linear 0.2s transform;
+
+
+    background-color: $dark;
+    color: $light;
+
+    position: fixed;
+    right: -80%;
+    top: 0;
+    
+    width: 80%;
+    height: 100vh;
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        height: calc(100% - 2rem);
+        padding: 1rem;
+
+        button:first-of-type{
+            margin-top: auto;
+        }
+
+    }
+
+    .nav-btn-close{
+        position: absolute;
+        left: -47px;
+        top: 1rem;
+
+        background-color: $dark;
+        width: 48px;
+        height: 48px;
+
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg{
+            width: 36px;
+            height: 36px;
+        }
+    }
+}
+
+.nav-active{
+    transform: translateX(-100%);
+
+    .nav-btn-close{
+        svg{
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.nav-background{
+    background-color: rgba(0, 0, 0, 0.20);
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 0vh;
+    width: 100%;
+
+    z-index: 9998;
+}
+
+.nav-bg-active{
+    height: 100vh;
+}

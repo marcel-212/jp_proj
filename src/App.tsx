@@ -1,18 +1,9 @@
+import { RouterProvider } from 'react-router'
 import './App.scss'
-import Footer from './layout/Footer'
-import Header from './layout/Header'
-import KanjiList from './sections/KanjiList'
+import { router } from './router'
 
 function App() {
-  return (
-    <>
-      <Header/>
-      <main>
-        <KanjiList/>
-      </main>
-      <Footer/>
-    </>
-  )
+  return <RouterProvider router={router}/>  
 }
 
 export default App
